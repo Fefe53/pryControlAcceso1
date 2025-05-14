@@ -20,6 +20,10 @@ namespace pryControlAcceso1
         private void abrirToolStripMenuItem_Click(object sender, EventArgs e)
         {
             abrirArchivos();
+            if (colorDialog1.ShowDialog() == DialogResult.OK)
+            {
+               this.BackColor = colorDialog1.Color;
+            }
         }
 
         private void guardarToolStripMenuItem_Click(object sender, EventArgs e)
@@ -33,11 +37,37 @@ namespace pryControlAcceso1
             {
                 lblArchivoSeleccionado.Text = openFileDialog1.FileName;
             }
+           
         }
 
         private void abrirToolStripButton_Click(object sender, EventArgs e)
         {
             abrirArchivos();
+        }
+
+        private void btnTarea_Click(object sender, EventArgs e)
+        {            
+            
+
+            if (btnTarea.Text=="Iniciar tarea")
+            {
+                btnTarea.BackColor = Color.Red;
+                btnTarea.Text = "Finalizar tarea";
+                temporizador.Enabled = true;                
+            }
+            else
+            {
+                btnTarea.BackColor = Color.Green;
+                btnTarea.Text = "Iniciar tarea";
+                temporizador.Enabled = false;
+            }
+        }
+        int contadortiempo = 0;
+
+        private void temporizador_Tick(object sender, EventArgs e)
+        {
+            contadortiempo ++;
+            lblTiempo.Text = contadortiempo.ToString();
         }
     }
 }

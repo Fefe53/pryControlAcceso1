@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.archivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -74,6 +75,10 @@
             this.toolStripSeparator7 = new System.Windows.Forms.ToolStripSeparator();
             this.ayudaToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.lblArchivoSeleccionado = new System.Windows.Forms.Label();
+            this.colorDialog1 = new System.Windows.Forms.ColorDialog();
+            this.lblTiempo = new System.Windows.Forms.Label();
+            this.btnTarea = new System.Windows.Forms.Button();
+            this.temporizador = new System.Windows.Forms.Timer(this.components);
             this.menuStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -438,11 +443,44 @@
             this.lblArchivoSeleccionado.TabIndex = 3;
             this.lblArchivoSeleccionado.Text = ".";
             // 
+            // colorDialog1
+            // 
+            this.colorDialog1.Color = System.Drawing.Color.PaleGreen;
+            // 
+            // lblTiempo
+            // 
+            this.lblTiempo.AutoSize = true;
+            this.lblTiempo.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTiempo.Location = new System.Drawing.Point(332, 241);
+            this.lblTiempo.Name = "lblTiempo";
+            this.lblTiempo.Size = new System.Drawing.Size(21, 29);
+            this.lblTiempo.TabIndex = 4;
+            this.lblTiempo.Text = "-";
+            // 
+            // btnTarea
+            // 
+            this.btnTarea.BackColor = System.Drawing.Color.Lime;
+            this.btnTarea.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTarea.Location = new System.Drawing.Point(198, 141);
+            this.btnTarea.Name = "btnTarea";
+            this.btnTarea.Size = new System.Drawing.Size(291, 69);
+            this.btnTarea.TabIndex = 5;
+            this.btnTarea.Text = "INICIAR TAREA";
+            this.btnTarea.UseVisualStyleBackColor = false;
+            this.btnTarea.Click += new System.EventHandler(this.btnTarea_Click);
+            // 
+            // temporizador
+            // 
+            this.temporizador.Tick += new System.EventHandler(this.temporizador_Tick);
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.MediumTurquoise;
             this.ClientSize = new System.Drawing.Size(751, 377);
+            this.Controls.Add(this.btnTarea);
+            this.Controls.Add(this.lblTiempo);
             this.Controls.Add(this.lblArchivoSeleccionado);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.statusStrip1);
@@ -506,6 +544,10 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator7;
         private System.Windows.Forms.ToolStripButton ayudaToolStripButton;
         private System.Windows.Forms.Label lblArchivoSeleccionado;
+        private System.Windows.Forms.ColorDialog colorDialog1;
+        private System.Windows.Forms.Label lblTiempo;
+        private System.Windows.Forms.Button btnTarea;
+        private System.Windows.Forms.Timer temporizador;
     }
 }
 
